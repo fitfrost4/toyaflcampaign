@@ -1,0 +1,5 @@
+screen -t master 0 afl-fuzz -i in/ -o out/ -m 4096 -M master  -- ./harness/harness
+screen -t slave1 1 afl-fuzz -i in/ -o out/ -S slave1  -- ./harness/harness-asan
+screen -t slave2 2 afl-fuzz -i in/ -o out/ -S slave2  -- ./harness/harness-asan
+screen -t slave3 3 afl-fuzz -i in/ -o out/ -S slave3  -- ./harness/harness-asan
+screen -t top 4 top
